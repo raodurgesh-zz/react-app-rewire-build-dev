@@ -33,7 +33,8 @@
     "build": "babel --source-maps --copy-files ./src --out-dir ./dist",
     "prepare": "babel --source-maps --copy-files ./src --out-dir ./dist",
     "readme": "gitdown ./.README/README.md --output-file ./README.md",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
