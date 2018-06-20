@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewire-build-dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Source code files used by `webpack-dev-server` is rendered in watch mode at user specified directory through override create-react-app webpack configs without ejecting",
   "main": "./dist/index.js",
   "keywords": [
