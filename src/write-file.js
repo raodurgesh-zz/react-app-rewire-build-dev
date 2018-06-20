@@ -35,7 +35,8 @@ module.exports = function WriteFileWebpackPlugin(userOptions = {}) {
       log: false,
       test: null,
       useHashIndex: true,
-      outputPath: "/"
+      outputPath: "/",
+      hotReloadPort : "3000"
     },
     userOptions
   );
@@ -196,16 +197,18 @@ module.exports = function WriteFileWebpackPlugin(userOptions = {}) {
         mkdirp.sync(path.dirname(relativeOutputPath));
 
         try {
-          if (
-            options.basename &&
-            outputFilePath.indexOf("index.html") !== -1
-          ) {
+          if (options.basename && outputFilePath.indexOf("index.html") !== -1) {
             assetSource = assetSource
               .replace(/href="/g, `href="${options.basename}`)
               .replace(/href='/g, `href='${options.basename}`)
               .replace(/src="/g, `src="${options.basename}`)
               .replace(/src='/g, `src='${options.basename}`);
           }
+
+          if (outputFilePath.indexOf("bundle.js") !== -1) {
+            assetSource = assetSource.replace(/window.location.port/g, options.hotReloadPort );
+          }
+
           fs.writeFileSync(relativeOutputPath.split("?")[0], assetSource);
           log(
             targetDefinition,
