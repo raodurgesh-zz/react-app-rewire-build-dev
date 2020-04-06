@@ -1,8 +1,14 @@
 # react-app-rewire-build-dev
 
-
-
 Source code files used by `webpack-dev-server` is rendered in watch mode at user specified directory without ejecting create-react-app.
+
+
+
+# For latest version of CRA, 
+
+refer to this link :
+
+https://github.com/raodurgesh/react-app-rewire-build-dev/issues/4
 
 
 # Why do I need this?
